@@ -12,4 +12,4 @@ out/libmylib.a: out/mylib.o
 libs: out/libmylib.a
 
 clean:
-	rm -f out/*.o out/*.a
+	rm -rf out
