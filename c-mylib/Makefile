@@ -4,7 +4,8 @@ out:
 	mkdir -p out
 
 out/mylib.o: mylib.c mylib.h out
-	cc $(LDFLAGS) -o out/mylib.o -c mylib.c
+	clang $(LDFLAGS) -o out/mylib.o -c mylib.c
+	# must be clang to support LTO with Rust
 
 out/libmylib.a: out/mylib.o
 	ar rcs out/libmylib.a out/mylib.o

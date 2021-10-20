@@ -12,9 +12,9 @@ To see a basic build and tests passing:
 ./test.sh
 ```
 
-But Link Time Optimization (LTO) of the C library breaks things in a strange way:
+Or to build the C library using Link Time Optimizations (LTO), do
 ```
 LDFLAGS=-flto ./test.sh
 ```
-In this case the tests of `mylib-sys` still pass, but the tests of `mylib-rs`
-fail to link.
+In this case, the `rustflags` set in [.cargo/config.toml](.cargo/config.toml) allow
+Rust to still link with the C library.
